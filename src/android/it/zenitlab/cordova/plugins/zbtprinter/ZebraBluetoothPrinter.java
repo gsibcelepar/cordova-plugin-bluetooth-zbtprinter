@@ -176,7 +176,7 @@ public class ZebraBluetoothPrinter extends CordovaPlugin implements DiscoveryHan
             }
 
             if (zebraPrinterLinkOs != null) {
-                printer.printImage(zebraimage, 150, 0, zebraimage.getWidth(), zebraimage.getHeight(), false);
+                printer.printImage(zebraimage, 0, 0, zebraimage.getWidth(), zebraimage.getHeight(), false);
             } else {
                 Log.d(LOG_TAG, "Storing label on printer...");
                 printer.storeImage("wgkimage.pcx", zebraimage, -1, -1);
@@ -194,7 +194,7 @@ public class ZebraBluetoothPrinter extends CordovaPlugin implements DiscoveryHan
         cpcl += zebraimage.getHeight();
         cpcl += " 1\r\n";
         cpcl += "PW 750\r\nTONE 0\r\nSPEED 6\r\nSETFF 203 5\r\nON - FEED FEED\r\nAUTO - PACE\r\nJOURNAL\r\n";
-        cpcl += "PCX 150 0 !<wgkimage.pcx\r\n";
+        cpcl += "PCX 0 0 !<wgkimage.pcx\r\n";
         cpcl += "FORM\r\n";
         cpcl += "PRINT\r\n";
         thePrinterConn.write(cpcl.getBytes());
