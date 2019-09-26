@@ -94,7 +94,7 @@ public class ZebraBluetoothPrinter extends CordovaPlugin implements DiscoveryHan
                     printLabel(labels);
 
                     //Voldoende wachten zodat label afgeprint is voordat we een nieuwe printer-operatie starten.
-                    Thread.sleep(15000);
+                    Thread.sleep(1000);
 
                     thePrinterConn.close();
 
